@@ -1,0 +1,20 @@
+rules:
+  - id: interfile
+    pattern: return 1;
+    languages: [java]
+    severity: INFO
+    message: interfile example
+    options:
+      interfile: true
+
+  - id: intrafile
+    languages: [java]
+    severity: INFO
+    mode: taint
+    pattern-sinks:
+      - pattern: y = ...
+    pattern-sources:
+      - pattern: input()
+    message: intrafile example
+    options:
+      interfile: true
