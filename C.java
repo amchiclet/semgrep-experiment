@@ -11,4 +11,10 @@ class C {
     int i() {
         int y = 0;
     }
+    int j() {
+        int y = new D().f();
+    }
+    int k() {
+        int y = new E().f();
+    }
 }
